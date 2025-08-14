@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUESTION7.css">
+    <title>Sign Up</title>
+</head>
+<body>
+<div id="container">
+    <%- include('partials/header') %>
+
+    <main>
+        <section id="caption" style="text-align: center;">
+            <h2>Welcome to Friends for Life!</h2>
+            <h3>At Friends for Life, we help do more than find a pet—we help you find an eternal bond.</h3>
+        </section>
+    </main>
+
+    <div id="main">
+        <div id="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="/QUESTION7">Home</a></li>
+                    <li><a href="/find">Find a Pet</a></li>
+                    <li><a href="/dogcare">Dog Care</a></li>
+                    <li><a href="/catcare">Cat Care</a></li>
+                    <li><a href="/giveaway">Have a pet to give away?</a></li>
+                    <li><a href="/contactus">Contact Us</a></li>
+                    <li><a href="/register">Register Now</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="column1">
+            <h2>Register</h2>
+            <% if (typeof message !== 'undefined') { %>
+                <% let isSuccess = message && message.startsWith('SUCESS!!'); %>
+                <div class="<%= isSuccess ? 'success-msg' : 'error-msg' %>">
+                  <%= message %>
+                </div>
+              <% } %>
+              
+            <p><strong>Username:</strong> letters and digits only.<br>
+            <strong>Password:</strong> at least 4 characters, letters and digits only, must include at least one letter and one digit.</p>
+
+            <div id="reg-message" style="color: red;"></div>
+    
+            <form id="register-form" action="/register" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Register</button>
+            </form>
+
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+    </div>
+
+    <%- include('partials/footer', { loggedIn }) %>
+</div>
+
+<script>
+document.getElementById('register-form').addEventListener('submit', function (e) {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const message = document.getElementById('reg-message');
+
+    const usernameValid = /^[A-Za-z0-9]+$/.test(username);
+    const passwordValid = /^[A-Za-z0-9]{4,}$/.test(password);
+    const hasLetter = /[A-Za-z]/.test(password);
+    const hasDigit = /\d/.test(password);
+
+    if (!usernameValid) {
+        e.preventDefault();
+        message.textContent = 'Username must contain only letters and digits.';
+        return;
+    }
+
+    if (!passwordValid || !hasLetter || !hasDigit) {
+        e.preventDefault();
+        message.textContent = 'Password must be at least 4 characters, include letters and digits only, and contain at least one letter and one digit.';
+        return;
+    }
+});
+</script>
+
+</body>
+</html>

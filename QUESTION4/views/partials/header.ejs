@@ -1,0 +1,17 @@
+<header>
+    <table class="center-table">
+        <tr>
+            <td><h1>FRIENDS FOR LIFE</h1></td>
+            <td><a href="/"><img src="adopt1.jpg" alt="Logo" height="100"></a></td>
+        </tr>
+    </table>
+    <div id="timing"><span id="datentime"></span></div>
+
+    <script>
+        function updateTime() {
+            document.getElementById('datentime').innerText = new Date().toLocaleString();
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</header>
