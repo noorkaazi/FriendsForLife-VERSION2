@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div#container {
+    max-width: 990px;
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+header {
+    background-color: rgb(255, 255, 255);
+    min-height: 80px;
+    text-decoration-thickness: 120px;
+    padding: 10px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+    padding:0%;
+    text-align: center;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+nav ul li:hover{
+    background-color: rgb(35, 79, 23);
+    color: white;
+}
+
+#main {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(95, 143, 86);
+    min-height: 300px;
+}
+
+#sidebar {
+    background-color: rgba(9, 255, 0, 0.247);
+    width: 30%;
+    min-height: 300px;
+    padding: 15px;
+}
+
+#column1 {
+    background-color: rgb(46, 40, 40);
+    width: 70%;
+    min-height: 300px;
+    padding: 15px;
+    color: white;
+}
+#sucesses img{
+    border-radius: 10px;
+    height:auto;
+    width: 195%;
+    max-width: 100%;
+}
+
+#timing{
+    text-align: right;
+    font-size: 10px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+footer {
+    background-color: #2f4430;
+    min-height: 60px;
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    #main {
+        flex-direction: column;
+    }
+
+    #sidebar, #column1 {
+        width: 100%;
+    }
+
+    #sidebar {
+        order: 1;
+    }
+
+    #column1 {
+        order: 2;
+    }
+}
+
+.center-table {
+    margin: auto;
+    text-align: center; 
+    font-size: larger;
+    font-weight: 600;
+}
+
+.interested-btn {
+    background-color: rgb(88, 183, 71);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+.interested-btn.interested {
+    background-color: #2f4430;
+}
+
+textarea {
+    width: 100%;
+    max-width: 650px;
+    height: 250px;
+    padding: 10px;
+    border: 10px solid rgb(88, 183, 71);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    resize: none;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+    background-color: #f8f8f8;
+}
+
+.pet-list img{
+    border-radius: 10px;
+    height:auto;
+    width: 850px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.success-msg {
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .error-msg {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
