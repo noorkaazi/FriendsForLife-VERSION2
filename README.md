@@ -13,21 +13,24 @@ Friends for Life is a web application that helps users find pets for adoption or
 
 ## Project Structure
 SOEN287-Assignment3/QUESTION4
+
 │
+
 ├── views/ # EJS templates (pages & partials)
+
 ├── public/ # CSS & JavaScript
+
 ├── pets.txt # Stores pet giveaway submissions
+
 ├── login.txt # Stores user credentials
+
 ├── ExpressServer.js # Main Express server file
+
 
 
 ## How to Run
 
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-
+1. Clone the repo 
 2. npm install -----INSTALLING DEPENDENCIES
 3. node ExpressServer.js -------- Run Server
 
