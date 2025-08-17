@@ -8,7 +8,6 @@ Friends for Life is a web application that helps users find pets for adoption or
 - Pet giveaway form (with validation)
 - Pet search/filtering by species, breed, gender, and compatibility
 - Matching pets displayed dynamically
-- Persistent storage using flat `.txt` files (no database needed)
 - Clean responsive layout with EJS partials and custom CSS
 
 ## Project Structure
